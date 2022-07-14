@@ -50,6 +50,10 @@ public class Myproject02Application {
 			System.out.println(clienteRepository.findById(2));
 
 			System.out.println();
+			System.out.println("Buscando por nome");
+			System.out.println(clienteRepository.findByNomeLike("Marcos Atualizado"));
+
+			System.out.println();
 			System.out.println("Deletando um");
 			clienteRepository.delete(cliente1);
 
@@ -60,6 +64,10 @@ public class Myproject02Application {
 				 listAtual) {
 				System.out.println(todos);
 			}
+
+			System.out.println();
+			System.out.println("Verificando se o id existe");
+			System.out.println(clienteRepository.existsById(2));
 
 
 		};

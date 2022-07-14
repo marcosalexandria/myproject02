@@ -1,10 +1,19 @@
 package com.example.myproject02.domain.entity;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "produto")
 public class Produto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "descricao", length = 200, nullable = false)
     private String descricao;
+    @Column(name = "preco_unitario")
     private BigDecimal precoUnitario;
 
     public Produto() {
