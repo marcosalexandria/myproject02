@@ -1,6 +1,7 @@
 package com.example.myproject02.domain.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -13,6 +14,9 @@ public class Cliente {
 
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Pedido> pedidos;
 
     public Cliente() {
     }

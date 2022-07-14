@@ -1,11 +1,23 @@
 package com.example.myproject02.domain.entity;
 
 
-public class ItemPedido {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "item_pedido")
+public class ItemPedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @ManyToOne
+    @JoinColumn(name = "pedido_ip")
     private Pedido pedidoId;
+
+    @ManyToOne
+    @JoinColumn(name = "produto_ip")
     private Produto produtoId;
+
+    @Column(name = "quantidade")
     private Integer quantidade;
 
     public ItemPedido() {

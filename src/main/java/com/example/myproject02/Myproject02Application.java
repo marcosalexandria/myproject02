@@ -1,7 +1,7 @@
 package com.example.myproject02;
 
 import com.example.myproject02.domain.entity.Cliente;
-import com.example.myproject02.domain.repositorio.ClienteRepository;
+import com.example.myproject02.domain.repository.ClienteRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
