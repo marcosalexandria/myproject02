@@ -1,10 +1,10 @@
 package com.example.myproject02.domain.entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "cliente")
 public class Cliente {
 
     @Id
@@ -16,7 +16,7 @@ public class Cliente {
     private String nome;
 
     @OneToMany(mappedBy = "cliente")
-    private List<Pedido> pedidos;
+    private Set<Pedido> pedidos;
 
     public Cliente() {
     }
@@ -42,11 +42,20 @@ public class Cliente {
         this.nome = nome;
     }
 
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(Set<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
+                ", pedidos=" + pedidos +
                 '}';
     }
 }

@@ -13,8 +13,8 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
     @Column(name = "data_pedido", length = 20, precision = 2)
@@ -79,5 +79,16 @@ public class Pedido {
 
     public void setItensPedidos(List<ItemPedido> itensPedidos) {
         this.itensPedidos = itensPedidos;
+    }
+
+    @Override
+    public String toString() {
+        return "Pedido{" +
+                "id=" + id +
+                ", cliente=" + cliente +
+                ", dataPedido=" + dataPedido +
+                ", total=" + total +
+                ", itensPedidos=" + itensPedidos +
+                '}';
     }
 }
